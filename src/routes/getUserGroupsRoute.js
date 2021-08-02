@@ -3,6 +3,5 @@ export const getUserGroupsRoute = {
     path: '/users/:id/groups',
     handler: async (req, res) => {
 
-
     }
 }
