@@ -10,12 +10,11 @@ export const getUserGroupsRoute = {
         const userId = req.params.id
 
         const user = await admin.auth().verifyIdToken(token)
-        console.log(user, userId)
         if (user.user_id !== userId) {
             return res.status(401).json({ message: "Not Authorized!" })
         }
 
-        const userGroups = getUserGroups(userId)
+        const userGroups = await getUserGroups(userId)
         res.status(200).json(userGroups)
 
     }
