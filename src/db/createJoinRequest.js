@@ -6,4 +6,5 @@ export const createJoinRequest = async (groupId, userId) => {
     await connection.collection('requests')
         .insertOne({ id: uuid(), groupId, userId })
 
+
 }
